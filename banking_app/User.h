@@ -11,12 +11,15 @@ class User {
 		string username;
 		string dob;
 		string userName;
-		string updateUser();
+		string setUser();
 		int createPin();
 		int pin = 0;
 		float checkingAccount = 0;
 		float savingsAccount = 0;
+		
+		
 		float showChecking();
+		float showSavings();
 		float makeDeposit();
 		void menuScreen();
 		

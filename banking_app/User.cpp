@@ -37,7 +37,7 @@ int User::createPin() {
     cin >> pin;
     return pin;
 }
-string User::updateUser() {
+string User::setUser() {
 	string userName;
     
     int pinCheck = 0;
@@ -62,13 +62,35 @@ float User::showChecking() {
     return checkingAccount;
 }
 
+float User::showSavings() {
+    cout << "You have a total Savings balance of: $" << savingsAccount << endl;
+    return savingsAccount;
+}
+
+
 float User::makeDeposit() {
-	float depositAmount;
-	cout << "How much would you like to deposit?" << flush;
-	cin >> depositAmount;
-	checkingAccount += depositAmount;
-	cout << "You now have a balance of: $" << checkingAccount << endl;
-	return checkingAccount;
+    float depositAmount;
+    int selection = 0;
+    do {
+        cout << "Enter '1' to deposit into checking" << endl;
+        cout << "Enter '2' to deposit into savings" << endl;
+        cout << "Enter: " << flush;
+        cin >> selection;
+        switch (selection) {
+        case 1: {
+            cout << "How much would you like to deposit into your checking account: $" << flush;
+            cin >> depositAmount;
+            checkingAccount = checkingAccount + depositAmount;
+            return checkingAccount;
+        }
+        case 2:
+            cout << "How much would you like to deposit into your savings account: $" << flush;
+            cin >> depositAmount;
+            savingsAccount = savingsAccount + depositAmount;
+            return savingsAccount;
+        }
+
+    } while (selection != 1 || 2);
 }
 void User::menuScreen() {
     int selection = 0;
@@ -79,13 +101,12 @@ void User::menuScreen() {
         cout << "2. Checking balance" << endl;
         cout << "3. Savings balance" << endl;
         cout << "4. Make deposit" << endl;
-        cout << "5. Delete account" << endl;
-        cout << "6. End session" << endl;
+        cout << "5. End session" << endl;
         cout << "Please make your selection: " << flush;
         cin >> selection;
         switch (selection) {
             case 1: {
-                userName = updateUser();
+                userName = setUser();
                 break;
             }
             case 2: {
@@ -93,8 +114,8 @@ void User::menuScreen() {
                 break;
             }
             case 3:{
-                    cout << "You have a total balance of: $" << savingsAccount << endl;
-                    break;
+                showSavings();
+                break;
                 }
             case 4:{
                     makeDeposit();
@@ -103,11 +124,9 @@ void User::menuScreen() {
             case 5:{
                 break;
                 }
-            case 6:{
-                break;
-                }
+       
 
 
         }
-    } while (selection < 7);
+    } while (selection < 6);
 }
