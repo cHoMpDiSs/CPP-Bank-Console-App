@@ -9,29 +9,38 @@ User::User() {
 	float savingsAccount = 0;
     
 	string name;
-	cout << "Enter your name: " << flush;
-	cin >> name;
-
     string userName;
-    cout << "Enter a username: " << flush;
-    cin >> userName;
-
-	int dob;
-	cout << "Enter date of birth in mmddyyyy format: " << flush;
-	cin >> dob;
-    
-    int pin = createPin();
-    
-    cout << "your pin is: " << pin << endl;
-    cout << "user " << userName << " created." << endl;
-	cout << "checking account: " << checkingAccount << endl;
-	cout << "savings account: " << savingsAccount << endl;
+    int dob;
+    int pin;
    
 }   
 
 User::~User() {
 	cout << "User deleted." << endl;
 }
+
+void User::createAccount(){
+
+    cout << "Enter your name: " << flush;
+    cin >> name;
+
+
+    cout << "Enter a username: " << flush;
+    cin >> userName;
+
+
+    cout << "Enter date of birth in mmddyyyy format: " << flush;
+    cin >> dob;
+
+    int pin = createPin();
+
+    cout << "your pin is: " << pin << endl;
+    cout << "user " << userName << " created." << endl;
+    cout << "checking account: " << checkingAccount << endl;
+    cout << "savings account: " << savingsAccount << endl;
+
+}
+
 int User::createPin() {
     cout << "Create your pin: " << flush;
     cin >> pin;

@@ -14,7 +14,7 @@ int main()
 
     while (true) {
         if (selection == 1) {
-            break;
+            break;            
         }
         else {
             cout << "Goodbye!" << endl;
@@ -23,6 +23,7 @@ int main()
     }
     User* user = new User();
 
+    user->createAccount();
     user->menuScreen();
        
     

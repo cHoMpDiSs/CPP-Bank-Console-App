@@ -22,6 +22,7 @@ class User {
 		float showSavings();
 		float makeDeposit();
 		void menuScreen();
+		void createAccount();
 		
 		User();
 		~User();
