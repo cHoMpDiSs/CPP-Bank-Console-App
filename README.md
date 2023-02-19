@@ -7,7 +7,7 @@
 
 
 
-Object Oriented Programming ->
-Coded entirely in C++ on Visual Studio 
+Object Oriented Programming ->.
+Coded entirely in C++ on Visual Studio. 
 Class methods to create account, change username, make deposits, & check balances.
 I will be adding more methods to make transfers between users & withdrawls.
