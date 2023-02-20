@@ -3,22 +3,6 @@
 
 using namespace std;
 
-User::User() {
-	
-	float checkingAccount = 0;
-	float savingsAccount = 0;
-    
-	string name;
-    string userName;
-    int dob;
-    int pin;
-   
-}   
-
-User::~User() {
-	cout << "User deleted." << endl;
-}
-
 void User::createAccount(){
 
 	cout << "Enter your name: " << flush;
@@ -138,4 +122,8 @@ void User::menuScreen() {
 
         }
     } while (selection > 1 && selection < 5);
+}
+
+User::~User() {
+	cout << "User deleted." << endl;
 }

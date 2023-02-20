@@ -14,17 +14,17 @@ int main()
 
     while (true) {
         if (selection == 1) {
-            break;            
+            User* user = new User();
+            user->createAccount();
+            user->menuScreen();
+                        
         }
         else {
             cout << "Goodbye!" << endl;
             return 0;
         }
     }
-    User* user = new User();
 
-    user->createAccount();
-    user->menuScreen();
        
     
     return 0;
