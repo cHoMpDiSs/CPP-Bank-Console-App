@@ -6,7 +6,7 @@ using namespace std;
 
 class User {
 
-	public:
+	private:
 		string name;
 		string username;
 		string dob;
@@ -16,15 +16,15 @@ class User {
 		int pin = 0;
 		float checkingAccount = 0;
 		float savingsAccount = 0;
-		
-		
+
+	public:
+		User() : name("Unnamed"), dob("MMDDYYYY") {};
+		User(string name, string dob) {};
 		float showChecking();
 		float showSavings();
 		float makeDeposit();
 		void menuScreen();
 		void createAccount();
-		
-		User();
 		~User();
 		
 };

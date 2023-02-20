@@ -3,17 +3,7 @@
 
 using namespace std;
 
-User::User() {
-	
-	float checkingAccount = 0;
-	float savingsAccount = 0;
-    
-	string name;
-    string userName;
-    int dob;
-    int pin;
-   
-}   
+
 
 User::~User() {
 	cout << "User deleted." << endl;
@@ -62,7 +52,7 @@ string User::setUser() {
     else {
         cout << "Incorrect pin goodbye" << pin << endl;
     }
-
+    
 	return userName;
 }
 
@@ -137,5 +127,5 @@ void User::menuScreen() {
 
 
         }
-    } while (selection < 6);
+    } while (selection > 1 && selection < 5);
 }
