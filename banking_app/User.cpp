@@ -3,7 +3,17 @@
 
 using namespace std;
 
-
+User::User() {
+	
+	float checkingAccount = 0;
+	float savingsAccount = 0;
+    
+	string name;
+    string userName;
+    int dob;
+    int pin;
+   
+}   
 
 User::~User() {
 	cout << "User deleted." << endl;
@@ -11,37 +21,37 @@ User::~User() {
 
 void User::createAccount(){
 
-    cout << "Enter your name: " << flush;
-    cin >> name;
+	cout << "Enter your name: " << flush;
+	cin >> name;
 
 
-    cout << "Enter a username: " << flush;
-    cin >> userName;
+	cout << "Enter a username: " << flush;
+	cin >> userName;
 
 
-    cout << "Enter date of birth in mmddyyyy format: " << flush;
-    cin >> dob;
+	cout << "Enter date of birth in mmddyyyy format: " << flush;
+	cin >> dob;
 
-    int pin = createPin();
+	int pin = createPin();
 
-    cout << "your pin is: " << pin << endl;
-    cout << "user " << userName << " created." << endl;
-    cout << "checking account: " << checkingAccount << endl;
-    cout << "savings account: " << savingsAccount << endl;
+	cout << "your pin is: " << pin << endl;
+	cout << "user " << userName << " created." << endl;
+	cout << "checking account: " << checkingAccount << endl;
+	cout << "savings account: " << savingsAccount << endl;
 
 }
 
 int User::createPin() {
-    cout << "Create your pin: " << flush;
-    cin >> pin;
-    return pin;
+	cout << "Create your pin: " << flush;
+	cin >> pin;
+	return pin;
 }
 string User::setUser() {
 	string userName;
     
-    int pinCheck = 0;
-    cout << "Enter your pin: " << flush;
-    cin >> pinCheck;
+	int pinCheck = 0;
+	cout << "Enter your pin: " << flush;
+	cin >> pinCheck;
 
     
     if (pinCheck == pin) {
@@ -57,39 +67,39 @@ string User::setUser() {
 }
 
 float User::showChecking() {
-    cout << "You have a total balance of: $" << checkingAccount << endl;
-    return checkingAccount;
+	cout << "You have a total balance of: $" << checkingAccount << endl;
+	return checkingAccount;
 }
 
 float User::showSavings() {
-    cout << "You have a total Savings balance of: $" << savingsAccount << endl;
-    return savingsAccount;
+	cout << "You have a total Savings balance of: $" << savingsAccount << endl;
+	return savingsAccount;
 }
 
 
 float User::makeDeposit() {
-    float depositAmount;
-    int selection = 0;
-    do {
-        cout << "Enter '1' to deposit into checking" << endl;
-        cout << "Enter '2' to deposit into savings" << endl;
-        cout << "Enter: " << flush;
-        cin >> selection;
-        switch (selection) {
-        case 1: {
-            cout << "How much would you like to deposit into your checking account: $" << flush;
-            cin >> depositAmount;
-            checkingAccount = checkingAccount + depositAmount;
-            return checkingAccount;
-        }
-        case 2:
-            cout << "How much would you like to deposit into your savings account: $" << flush;
-            cin >> depositAmount;
-            savingsAccount = savingsAccount + depositAmount;
-            return savingsAccount;
-        }
+	float depositAmount;
+	int selection = 0;
+	do {
+		cout << "Enter '1' to deposit into checking" << endl;
+		cout << "Enter '2' to deposit into savings" << endl;
+		cout << "Enter: " << flush;
+		cin >> selection;
+	switch (selection) {
+		case 1: {
+		    cout << "How much would you like to deposit into your checking account: $" << flush;
+		    cin >> depositAmount;
+		    checkingAccount = checkingAccount + depositAmount;
+		    return checkingAccount;
+	}
+		case 2:
+		    cout << "How much would you like to deposit into your savings account: $" << flush;
+		    cin >> depositAmount;
+		    savingsAccount = savingsAccount + depositAmount;
+		    return savingsAccount;
+	}
 
-    } while (selection != 1 || 2);
+	} while (selection != 1 || 2);
 }
 void User::menuScreen() {
     int selection = 0;
