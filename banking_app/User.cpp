@@ -42,12 +42,14 @@ string User::setUser() {
         cout << "Access Granted." << endl;
         cout << "New UserName: " << flush;
         cin >> userName;
+		
     }
     else {
         cout << "Incorrect pin goodbye" << pin << endl;
+		
     }
-    
 	return userName;
+	
 }
 
 float User::showChecking() {
@@ -87,7 +89,7 @@ float User::makeDeposit() {
 }
 void User::menuScreen() {
     int selection = 0;
-    string userName = userName;
+    
     do {
         cout << "Welcome " << userName << endl;
         cout << "1. Update User info" << endl;
@@ -97,31 +99,30 @@ void User::menuScreen() {
         cout << "5. End session" << endl;
         cout << "Please make your selection: " << flush;
         cin >> selection;
-        switch (selection) {
-            case 1: {
-                userName = setUser();
-                break;
-            }
-            case 2: {
-                showChecking();
-                break;
-            }
-            case 3:{
-                showSavings();
-                break;
-                }
-            case 4:{
-                    makeDeposit();
-                    break;
-                }
-            case 5:{
-                break;
-                }
-       
-
-
-        }
+		switch (selection) {
+		case 1: {
+			userName = setUser();
+			break;
+		}
+		case 2: {
+			showChecking();
+			break;
+		}
+		case 3: {
+			showSavings();
+			break;
+		}
+		case 4: {
+			makeDeposit();
+			break;
+		}
+		case 5: {
+			break;
+		}
+		}   
+		cout << "You have been successfully logged out. Goodbye!" << endl;
     } while (selection > 1 && selection < 5);
+	
 }
 
 User::~User() {
